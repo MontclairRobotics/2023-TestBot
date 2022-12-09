@@ -24,6 +24,8 @@ public class Climber extends ManagerSubsystemBase
      * the upward direction. Please use TalonFX.setInverted(boolean),
      * as well as a constant
      */
+    
+    // NOTE: use ControlMode.PercentOutput for .set()
 
     // void up()   : Make both motors go up with the speed Constants.CLIMBER_SPEED.
     // void down() : Make both motors go down with the speed Constants.CLIMBER_SPEED.
