@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import org.team555.frc.controllers.GameController;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -14,5 +16,39 @@ package frc.robot;
  */
 public final class Constants 
 {
+    // Left Motor Ports
+    public static final int LEFT_MOTOR_1_PORT = 2; 
+    public static final int LEFT_MOTOR_2_PORT = 4;
+    public static final int LEFT_MOTOR_3_PORT = 3;
 
+    // Right Motor Ports
+    public static final int RIGHT_MOTOR_1_PORT = 9;
+    public static final int RIGHT_MOTOR_2_PORT = 10;
+    public static final int RIGHT_MOTOR_3_PORT = 11;
+
+    // Intake motor port number
+    public static final int INTAKE_MOTOR_PORT = 1;
+
+    // Transport motor port number
+    public static final int TRANSPORT_MOTOR_PORT = 40;
+    
+    // Shooter motor Port
+    public static final int LEFT_SHOOTER_MOTOR_PORT = 7;
+    public static final int RIGHT_SHOOTER_MOTOR_PORT = 5;
+
+    // Climber Motor Ports
+    public static final int LEFT_CLIMBER_MOTOR_PORT = 41;
+    public static final int RIGHT_CLIMBER_MOTOR_PORT = 42;
+
+
+
+    // Drivetrain Inversion
+    public static final boolean LEFT_DRIVE_INVERSION = false;
+    public static final boolean RIGHT_DRIVE_INVERSION = true;
+
+
+
+    // Controller Information
+    public static final GameController.Type DRIVER_CONTROLLER_TYPE = GameController.Type.PS4;
+    public static final GameController.Type OPERATOR_CONTROLLER_TYPE = GameController.Type.PS4;
 }
