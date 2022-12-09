@@ -31,3 +31,5 @@ public class Climber extends ManagerSubsystemBase
 
     // @Override void whenInactive() : make sure both motors are stopped
 }
+
+// In Robot.java, make it so that Y_TRIANGLE is climbers up and A_CROSS is climbers down
