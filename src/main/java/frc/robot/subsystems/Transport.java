@@ -16,8 +16,6 @@ public class Transport extends ManagerSubsystemBase
      * When you run the transport, a motor should spin around
      * which should move a belt which moves balls from the bottom,
      * next to the intake, to the top, next to shooter
-     * 
-     * An intake should do
      */
 
      //void startMoving(): make motor spin with speed Constants.BALL_TRANSPORT_SPEED

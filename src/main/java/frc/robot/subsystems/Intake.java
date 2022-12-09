@@ -17,8 +17,6 @@ public class Intake extends ManagerSubsystemBase
      * When you run the intake, a motor should spin around
      * which should allow the robot to suck in a ball located
      * in front of it.
-     * 
-     * An intake should do
      */
 
      //void startIntake(): make motor spin with speed Constants.INTAKE_SPEED
