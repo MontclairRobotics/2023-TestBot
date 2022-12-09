@@ -1,8 +1,10 @@
 package frc.robot.subsystems;
 
+import org.team555.frc.command.commandrobot.ManagerSubsystemBase;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class Shooter extends SubsystemBase
+public class Shooter extends ManagerSubsystemBase
 {
     /* Requires:
      *  - CanSparkMax left  : use MotorType.kBrushless so it doesn't catch on fire
