@@ -17,7 +17,12 @@ public class Transport extends ManagerSubsystemBase
      * which should move a belt which moves balls from the bottom,
      * next to the intake, to the top, next to shooter
      */
+    public TalonFX transportMotor = new TalonFX(Constants.TRANSPORT_MOTOR_PORT);
 
+    public void startTransporting()
+    {
+        transportMotor.set(TRANSPORT_MOTOR_SPEED);
+    }
      //void startMoving(): make motor spin with speed Constants.BALL_TRANSPORT_SPEED
      //void startMovingBackwards(): make motor spin backwards with speed Constants.BALL_TRANSPORT_SPEED
      //void stop(): stop the motor
