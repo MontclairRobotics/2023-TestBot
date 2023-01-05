@@ -2,10 +2,16 @@ package frc.robot.subsystems;
 
 import org.team555.frc.command.commandrobot.ManagerSubsystemBase;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Shooter extends ManagerSubsystemBase
 {
+    private final CANSparkMax leftMotor = new CANSparkMax(Constants.LEFT_SHOOTER_MOTOR_PORT, MotorType.kBrushless);
+    private final CANSparkMax rightMotor = new CANSparkMax(Constants.RIGHT_SHOOTER_MOTOR_PORT, MotorType.kBrushless);
+    
     /* Requires:
      *  - CanSparkMax left  : use MotorType.kBrushless so it doesn't catch on fire
      *  - CanSparkMax right : use MotorType.kBrushless so it doesn't catch on fire

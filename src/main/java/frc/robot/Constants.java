@@ -54,6 +54,8 @@ public final class Constants
     public static final GameController.Type DRIVER_CONTROLLER_TYPE = GameController.Type.PS4;
     public static final GameController.Type OPERATOR_CONTROLLER_TYPE = GameController.Type.PS4;
     
-    
-    
+    //Shooter Constants
+    public static final double SHOOTER_SPEED = 1;
+    public static final boolean SHOOTER_LEFT_INVERTED = true;
+    public static final boolean SHOOTER_RIGHT_INVERTED = true;
 }
