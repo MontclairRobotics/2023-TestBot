@@ -40,9 +40,9 @@ public final class Constants
     public static final int LEFT_CLIMBER_MOTOR_PORT = 41;
     public static final int RIGHT_CLIMBER_MOTOR_PORT = 42;
 
-    // Intake speed
+    // motor speeds
     public static final double INTAKE_SPEED = 0.5;
-
+    public static final double CLIMBER_SPEED = 0.5;
 
     // Drivetrain Inversion
     public static final boolean LEFT_DRIVE_INVERSION = false;
