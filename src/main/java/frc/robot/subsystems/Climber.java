@@ -2,6 +2,11 @@ package frc.robot.subsystems;
 
 import org.team555.frc.command.commandrobot.ManagerSubsystemBase;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+import frc.robot.Constants;
+
 public class Climber extends ManagerSubsystemBase
 {
     /* Requires:
@@ -33,11 +38,23 @@ public class Climber extends ManagerSubsystemBase
     // todo: SOME TODO
     // note: a note
     // * documentation
+    private final CANSparkMax motor = new CANSparkMax(Constants.INTAKE_MOTOR_PORT, MotorType.kBrushless);
 
     // void up()   : Make both motors go up with the speed Constants.CLIMBER_SPEED.
     // void down() : Make both motors go down with the speed Constants.CLIMBER_SPEED.
     // void stop() : Make both motors stop; speed 0.
-
+    public void up()
+    {
+       motor.set(Constants.CLIMBER_SPEED);
+    }
+    public void down()
+    {
+       motor.set(-Constants.CLIMBER_SPEED);
+    }
+    public void stop()
+    {
+       motor.set(0);
+    }
     // @Override void whenInactive() : make sure both motors are stopped
 }
 
