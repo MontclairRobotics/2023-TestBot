@@ -40,6 +40,8 @@ public final class Constants
     public static final int LEFT_CLIMBER_MOTOR_PORT = 41;
     public static final int RIGHT_CLIMBER_MOTOR_PORT = 42;
 
+    // Intake speed
+    public static final double INTAKE_SPEED = 0.5;
 
 
     // Drivetrain Inversion
@@ -51,4 +53,7 @@ public final class Constants
     // Controller Information
     public static final GameController.Type DRIVER_CONTROLLER_TYPE = GameController.Type.PS4;
     public static final GameController.Type OPERATOR_CONTROLLER_TYPE = GameController.Type.PS4;
+    
+    
+    
 }

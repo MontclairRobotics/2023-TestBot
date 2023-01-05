@@ -27,6 +27,13 @@ public class Climber extends ManagerSubsystemBase
     
     // NOTE: use ControlMode.PercentOutput for .set()
 
+    // ! IMPORTANT
+    // . Crossout
+    // ? Question
+    // todo: SOME TODO
+    // note: a note
+    // * documentation
+
     // void up()   : Make both motors go up with the speed Constants.CLIMBER_SPEED.
     // void down() : Make both motors go down with the speed Constants.CLIMBER_SPEED.
     // void stop() : Make both motors stop; speed 0.

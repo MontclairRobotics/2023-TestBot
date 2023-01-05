@@ -7,6 +7,8 @@ package frc.robot;
 import org.team555.frc.command.AutoCommands;
 import org.team555.frc.command.Commands;
 import org.team555.frc.command.commandrobot.RobotContainer;
+import org.team555.frc.controllers.GameController;
+import org.team555.frc.controllers.GameController.Button;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
@@ -23,9 +25,12 @@ import frc.robot.subsystems.Shooter;
  * project.
  */
 public class Robot extends RobotContainer 
-{
+{   
+    private static final GameController drivercontroller = GameController.from(Constants.DRIVER_CONTROLLER_TYPE, 0);
+    private static final GameController operatorController = GameController.from(Constants.OPERATOR_CONTROLLER_TYPE, 0);
     // Create all subsystems here
     // using `static final`.
+    private static final Intake intake = new Intake();
 
     @Override
     public void initialize() 
@@ -35,6 +40,17 @@ public class Robot extends RobotContainer
         // Then, create all shuffleboard initialization
 
         // Then, create all button bindings
+        
+        // suck
+        operatorController.getButton(Button.X_SQUARE)
+            .whenActive(() -> intake.startIntake())
+            .whenInactive(() -> intake.stop());
+        
+        // unsuck
+        operatorController.getButton(Button.B_CIRCLE)
+            .whenActive(() -> intake.startReverseIntake())
+            .whenInactive(() -> intake.stop());
+
 
         // Then, create autonomous commands
         AutoCommands.add("Main", () -> Commands.instant(() -> {}));
