@@ -21,7 +21,20 @@ public class Transport extends ManagerSubsystemBase
 
     public void startTransporting()
     {
-        transportMotor.set(TRANSPORT_MOTOR_SPEED);
+        transportMotor.set(ControlMode.PercentOutput, Constants.TRANSPORT_MOTOR_SPEED);
+    }
+    public void startMovingBackwards()
+    {
+        transportMotor.set(ControlMode.PercentOutput, -Constants.TRANSPORT_MOTOR_SPEED);
+    }
+    void stop()
+    {
+        transportMotor.set(0);
+    }
+    @Override
+    void whenInactive()
+    {
+        
     }
      //void startMoving(): make motor spin with speed Constants.BALL_TRANSPORT_SPEED
      //void startMovingBackwards(): make motor spin backwards with speed Constants.BALL_TRANSPORT_SPEED
