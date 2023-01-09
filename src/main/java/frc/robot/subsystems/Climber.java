@@ -1,7 +1,10 @@
 package frc.robot.subsystems;
 
+import org.ejml.dense.row.factory.LinearSolverFactory_MT_DDRM;
 import org.team555.frc.command.commandrobot.ManagerSubsystemBase;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
@@ -38,22 +41,33 @@ public class Climber extends ManagerSubsystemBase
     // todo: SOME TODO
     // note: a note
     // * documentation
-    private final CANSparkMax motor = new CANSparkMax(Constants.INTAKE_MOTOR_PORT, MotorType.kBrushless);
+    private final TalonFX leftMotor = new TalonFX(Constants.LEFT_CLIMBER_MOTOR_PORT);
+    private final TalonFX rightMotor = new TalonFX(Constants.RIGHT_CLIMBER_MOTOR_PORT);
 
+    public Climber() {
+      leftMotor.setInverted(Constants.LEFT_CLIMBER_MOTOR_INVERTED);
+      rightMotor.setInverted(Constants.RIGHT_CLIMBER_MOTOR_INVERTED);
+    }
+    
     // void up()   : Make both motors go up with the speed Constants.CLIMBER_SPEED.
     // void down() : Make both motors go down with the speed Constants.CLIMBER_SPEED.
     // void stop() : Make both motors stop; speed 0.
     public void up()
     {
-       motor.set(Constants.CLIMBER_SPEED);
+       leftMotor.set(ControlMode.PercentOutput, Constants.LEFT_CLIMBER_MOTOR_SPEED);
+       rightMotor.set(ControlMode.PercentOutput, Constants.RIGHT_CLIMBER_MOTOR_SPEED);
+
+
     }
     public void down()
     {
-       motor.set(-Constants.CLIMBER_SPEED);
-    }
+      leftMotor.set(ControlMode.PercentOutput, -Constants.LEFT_CLIMBER_MOTOR_SPEED);
+      rightMotor.set(ControlMode.PercentOutput, -Constants.RIGHT_CLIMBER_MOTOR_SPEED);
+   }
     public void stop()
     {
-       motor.set(0);
+      leftMotor.set(ControlMode.PercentOutput, 0);
+      leftMotor.set(ControlMode.PercentOutput, 0);
     }
     // @Override void whenInactive() : make sure both motors are stopped
 }
