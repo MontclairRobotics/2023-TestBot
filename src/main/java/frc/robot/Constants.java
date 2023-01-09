@@ -42,13 +42,8 @@ public final class Constants
 
     // motor speeds
     public static final double INTAKE_SPEED = 0.5;
-
-    //Climber Constants
     public static final double LEFT_CLIMBER_MOTOR_SPEED = 0.5;
     public static final double RIGHT_CLIMBER_MOTOR_SPEED = 0.5;
-    public static final boolean LEFT_CLIMBER_MOTOR_INVERTED = false;
-    public static final boolean RIGHT_CLIMBER_MOTOR_INVERTED = false;
-
 
     // Drivetrain Inversion
     public static final boolean LEFT_DRIVE_INVERSION = false;
@@ -64,4 +59,8 @@ public final class Constants
     public static final double SHOOTER_SPEED = 1;
     public static final boolean SHOOTER_LEFT_INVERTED = true;
     public static final boolean SHOOTER_RIGHT_INVERTED = true;
+
+    //Transport Constants
+    public static final double TRANSPORT_MOTOR_SPEED = 0.6;
+
 }

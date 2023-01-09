@@ -29,7 +29,7 @@ public class Transport extends ManagerSubsystemBase
     }
     void stop()
     {
-        transportMotor.set(0);
+        transportMotor.set(ControlMode.PercentOutput, 0);
     }
     @Override
     void whenInactive()
