@@ -2,7 +2,11 @@ package frc.robot.subsystems;
 
 import org.team555.frc.command.commandrobot.ManagerSubsystemBase;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Transport extends ManagerSubsystemBase
 {
@@ -31,11 +35,7 @@ public class Transport extends ManagerSubsystemBase
     {
         transportMotor.set(ControlMode.PercentOutput, 0);
     }
-    @Override
-    void whenInactive()
-    {
-        
-    }
+
      //void startMoving(): make motor spin with speed Constants.BALL_TRANSPORT_SPEED
      //void startMovingBackwards(): make motor spin backwards with speed Constants.BALL_TRANSPORT_SPEED
      //void stop(): stop the motor

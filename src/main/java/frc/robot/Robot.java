@@ -9,6 +9,7 @@ import org.team555.frc.command.Commands;
 import org.team555.frc.command.commandrobot.RobotContainer;
 import org.team555.frc.controllers.GameController;
 import org.team555.frc.controllers.GameController.Button;
+import org.team555.frc.controllers.GameController.DPad;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
@@ -17,6 +18,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.Transport;
 import frc.robot.subsystems.Climber;
 
 /**
@@ -33,6 +35,7 @@ public class Robot extends RobotContainer
     // using `static final`.
     private static final Intake intake = new Intake();
     private static final Climber climber = new Climber();
+    private static final Transport transport = new Transport();
 
     @Override
     public void initialize() 
@@ -62,6 +65,19 @@ public class Robot extends RobotContainer
         operatorController.getButton(Button.A_CROSS)
             .whenActive(() -> climber.down())
             .whenInactive(() -> climber.stop());
+            //make it so that
+//      - When the DPad up, start moving
+//      - When the DPad down, move it down
+        //transport forward
+        operatorController.getDPad(DPad.UP)
+        .whenActive(() -> transport.startTransporting())
+        .whenInactive(() -> transport.stop());
+
+        //transport backward
+        operatorController.getDPad(DPad.DOWN)
+            .whenActive(() -> transport.startMovingBackwards())
+            .whenInactive(() -> transport.stop());
+
     
         // Then, create autonomous commands
         AutoCommands.add("Main", () -> Commands.instant(() -> {}));
