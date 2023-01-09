@@ -47,10 +47,14 @@ public class Robot extends RobotContainer
         // Then, create all shuffleboard initialization
 
         // Then, create all button bindings
+
+        // repel
         operatorController.getAxis(Axis.RIGHT_TRIGGER)
             .whenGreaterThan(0.5)
             .whenActive(() -> shooter.repel())
             .whenInactive(() -> shooter.stop());
+
+        // expel
         operatorController.getAxis(Axis.LEFT_TRIGGER)
             .whenGreaterThan(0.5)
             .whenActive(() -> shooter.expel())
