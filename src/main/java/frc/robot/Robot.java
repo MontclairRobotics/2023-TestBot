@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.Climber;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -31,6 +32,7 @@ public class Robot extends RobotContainer
     // Create all subsystems here
     // using `static final`.
     private static final Intake intake = new Intake();
+    private static final Climber climber = new Climber();
 
     @Override
     public void initialize() 
@@ -51,7 +53,16 @@ public class Robot extends RobotContainer
             .whenActive(() -> intake.startReverseIntake())
             .whenInactive(() -> intake.stop());
 
-
+        //climbers up
+        operatorController.getButton(Button.Y_TRIANGLE)
+            .whenActive(() -> climber.up())
+            .whenInactive(() -> climber.stop());
+        
+        //climbers down
+        operatorController.getButton(Button.A_CROSS)
+            .whenActive(() -> climber.down())
+            .whenInactive(() -> climber.stop());
+    
         // Then, create autonomous commands
         AutoCommands.add("Main", () -> Commands.instant(() -> {}));
 
