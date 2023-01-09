@@ -12,6 +12,25 @@ public class Shooter extends ManagerSubsystemBase
     private final CANSparkMax leftMotor = new CANSparkMax(Constants.LEFT_SHOOTER_MOTOR_PORT, MotorType.kBrushless);
     private final CANSparkMax rightMotor = new CANSparkMax(Constants.RIGHT_SHOOTER_MOTOR_PORT, MotorType.kBrushless);
     
+    public Shooter(){
+        leftMotor.setInverted(Constants.SHOOTER_LEFT_INVERTED);
+        rightMotor.setInverted(Constants.SHOOTER_RIGHT_INVERTED);
+    }
+    
+    public void expel(){
+        leftMotor.set(Constants.SHOOTER_SPEED);
+        rightMotor.set(Constants.SHOOTER_SPEED);
+    }
+    public void repel(){
+        leftMotor.set(-Constants.SHOOTER_SPEED);
+        rightMotor.set(-Constants.SHOOTER_SPEED);
+    }
+
+
+    public void stop(){
+      leftMotor.set(0);
+      rightMotor.set(0);
+    }
     /* Requires:
      *  - CanSparkMax left  : use MotorType.kBrushless so it doesn't catch on fire
      *  - CanSparkMax right : use MotorType.kBrushless so it doesn't catch on fire

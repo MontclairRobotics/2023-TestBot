@@ -8,6 +8,7 @@ import org.team555.frc.command.AutoCommands;
 import org.team555.frc.command.Commands;
 import org.team555.frc.command.commandrobot.RobotContainer;
 import org.team555.frc.controllers.GameController;
+import org.team555.frc.controllers.GameController.Axis;
 import org.team555.frc.controllers.GameController.Button;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -31,7 +32,7 @@ public class Robot extends RobotContainer
     // Create all subsystems here
     // using `static final`.
     private static final Intake intake = new Intake();
-
+    private static final Shooter shooter = new Shooter();
     @Override
     public void initialize() 
     {
@@ -40,6 +41,14 @@ public class Robot extends RobotContainer
         // Then, create all shuffleboard initialization
 
         // Then, create all button bindings
+        operatorController.getAxis(Axis.RIGHT_TRIGGER)
+            .whenGreaterThan(0.5)
+            .whenActive(() -> shooter.repel())
+            .whenInactive(() -> shooter.stop());
+        operatorController.getAxis(Axis.LEFT_TRIGGER)
+            .whenGreaterThan(0.5)
+            .whenActive(() -> shooter.expel())
+            .whenInactive(() -> shooter.expel());
         
         // suck
         operatorController.getButton(Button.X_SQUARE)
