@@ -27,7 +27,24 @@ public class RobotCommands {
 
     public static Command shootSequence() {
         return sequence (
-            
+                instant(() -> {
+                    transport.startMovingBackwards();
+                    shooter.repel();
+                }),
+            runForTime(0.2, block(transport,shooter)),
+            instant(() -> {
+                shooter.expel();
+                transport.stop();
+            }),
+            runForTime(0.5, block(shooter, transport)),
+            instant(() -> {
+                transport.startTransporting();
+            }),
+            runForTime(0.7, block(transport,shooter)),
+            instant(() -> {
+                transport.stop();
+                shooter.stop();
+            })
         );
     }
 }

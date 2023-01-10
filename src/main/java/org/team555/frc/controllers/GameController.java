@@ -269,9 +269,9 @@ public abstract class GameController
      * Gets a trigger representing the provided button.
      * @return a trigger which tracks the provided button
      */
-    public final Trigger getButton(Button type) 
+    public final Trigger getButton(Button aCross) 
     {
-        return new Trigger(() -> getButtonValue(type));
+        return new Trigger(() -> getButtonValue(up));
     }
     /**
      * Gets a trigger representing the provided dpad button.
