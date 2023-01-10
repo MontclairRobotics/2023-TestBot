@@ -30,19 +30,35 @@ import frc.robot.subsystems.Climber;
  */
 public class Robot extends RobotContainer 
 {   
-    private static final GameController drivercontroller = GameController.from(Constants.DRIVER_CONTROLLER_TYPE, 0);
-    private static final GameController operatorController = GameController.from(Constants.OPERATOR_CONTROLLER_TYPE, 0);
+    public static final GameController drivercontroller = GameController.from(Constants.DRIVER_CONTROLLER_TYPE, 0);
+    public static final GameController operatorController = GameController.from(Constants.OPERATOR_CONTROLLER_TYPE, 0);
     // Create all subsystems here
     // using `static final`.
-    private static final Intake intake = new Intake();
-    private static final Shooter shooter = new Shooter();
-    private static final Climber climber = new Climber();
-    private static final Transport transport = new Transport();
+    public static final Drivetrain drivetrain = new Drivetrain();
+    public static final Intake intake = new Intake();
+    public static final Shooter shooter = new Shooter();
+    public static final Climber climber = new Climber();
+    public static final Transport transport = new Transport();
 
     @Override
     public void initialize() 
     {
         // First, add all setup code
+        // drivetrain.setDefaultCommand(
+        //     run(() -> 
+        //     {
+        //         if(!DriverStation.isTeleop())
+        //         {
+        //             return;
+        //         }
+
+        //         drivetrain.set(
+        //             -driverController.getAxisValue(LEFT_Y), 
+        //             driverController.getAxisValue(RIGHT_X)
+        //         );
+        //         //System.out.println(navxTracker.getAngularVelocity());
+        //     }, drivetrain)
+        // );
 
         // Then, create all shuffleboard initialization
 

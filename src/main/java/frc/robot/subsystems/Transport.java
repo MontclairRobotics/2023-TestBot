@@ -31,7 +31,7 @@ public class Transport extends ManagerSubsystemBase
     {
         transportMotor.set(ControlMode.PercentOutput, -Constants.TRANSPORT_MOTOR_SPEED);
     }
-    void stop()
+    public void stop()
     {
         transportMotor.set(ControlMode.PercentOutput, 0);
     }

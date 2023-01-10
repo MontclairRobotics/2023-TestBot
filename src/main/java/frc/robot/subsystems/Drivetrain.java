@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import java.util.Arrays;
 
+import org.team555.frc.command.commandrobot.ManagerSubsystemBase;
 import org.team555.frc.command.commandrobot.RobotContainer;
 
 import com.kauailabs.navx.frc.AHRS;
@@ -25,7 +26,7 @@ import static frc.robot.Constants.*;
 
 import frc.robot.Constants;
 
-public final class Drivetrain extends RobotContainer
+public final class Drivetrain extends ManagerSubsystemBase
 {
     ////////////////////////////////////////////////
     // Final fields
