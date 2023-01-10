@@ -68,4 +68,12 @@ public final class Constants
     //Transport Constants
     public static final double TRANSPORT_MOTOR_SPEED = 0.6;
 
+    // drive train coversion rate in ticks per feet
+    // TODO: make easier to change
+    public static final double TICKS_PER_ROTATION = 42.0;
+    public static final double GEAR_RATIO_IN_TO_OUT = 10.86 / 1.0;
+    public static final double WHEEL_DIAMETER = 6.0; //inches
+    public static final double WHEEL_CIRCUMFERENCE = Math.PI * WHEEL_DIAMETER;
+    public static final double CONVERSION_RATE 
+    = (WHEEL_DIAMETER /*in*/ * Math.PI /*r o*/) / /*r m*/ GEAR_RATIO_IN_TO_OUT;
 }
