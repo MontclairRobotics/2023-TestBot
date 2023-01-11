@@ -112,6 +112,10 @@ public class Robot extends RobotContainer
         // Then, create autonomous commands
         AutoCommands.add("Main", () -> Commands.instant(() -> {}));
 
+        AutoCommands.add("Drive for Three Seconds", () -> RobotCommands.driveForTime(0.5, 3));
+
+        AutoCommands.add("Shoot then Taxi", () -> RobotCommands.shootThenTaxi());
+
         // Finally, set up the auto command chooser on shuffleboard
         Shuffleboard.getTab("Main").add("Auto Commands", AutoCommands.chooser());
     }

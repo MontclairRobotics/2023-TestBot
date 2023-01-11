@@ -13,6 +13,12 @@ import static edu.wpi.first.wpilibj2.command.CommandGroupBase.*;
 
 public class RobotCommands {
     
+    /**
+     * Creates a Command which drives at given speed for given time
+     * 
+     * @param speed 
+     * @param time  
+     */
     public static Command driveForTime(double speed, double time) {
         return sequence(
                 instant(() -> {
@@ -46,5 +52,15 @@ public class RobotCommands {
                 shooter.stop();
             })
         );
+    }
+
+    public static Command shootThenTaxi() {
+        return race {
+            sequence (
+                shootSequence(),
+                driveForTime(-0.2, 2)
+            ),
+            block(drivetrain, transport, shooter);
+        };
     }
 }
